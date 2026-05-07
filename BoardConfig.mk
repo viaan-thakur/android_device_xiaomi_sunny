@@ -7,8 +7,14 @@
 DEVICE_PATH := device/xiaomi/sunny
 KERNEL_PATH := device/xiaomi/sunny-kernel
 
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # Inherit from proprietary files
 include vendor/xiaomi/sunny/BoardConfigVendor.mk
+
+# Inherit from proprietary files for Leica Camera
+-include vendor/xiaomi/mojito-leicacamera/BoardConfigVendor.mk
 
 # A/B
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
